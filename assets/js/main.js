@@ -286,4 +286,60 @@ sr.reveal(`.footer, footer__container`, {
   distance: "30px",
 });
 
+    // Modal functionality
 
+
+    const projectModal = document.getElementById('modal2');
+    const closeModal = document.getElementById('closeModal');
+    const workButtons = document.querySelectorAll('.work__button');
+    
+    // Sample project data
+    const projects = {
+        1: {
+            title: "Web Design Project 1",
+            description: "Details about the Web Design project."
+        },
+        2: {
+            title: "Mobile App Project",
+            description: "Details about the Mobile App project."
+        },
+        3: {
+            title: "Brand Design Project",
+            description: "Details about the Brand Design project."
+        },
+        4: {
+            title: "Web Design Project 2",
+            description: "Details about the second Web Design project."
+        }
+    };
+    
+    workButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const projectId = button.dataset.id;
+            const project = projects[projectId];
+    
+            // Populate modal with project details
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalDescription').textContent = project.description;
+    
+            // Show the modal
+            projectModal.style.display = 'flex';
+            mainContent.classList.add('blur-background');
+        });
+    });
+    
+    // Close modal
+    closeModal.addEventListener('click', () => {
+        projectModal.style.display = 'none';
+        mainContent.classList.remove('blur-background');
+    });
+    
+    // Close modal when clicking outside of modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === projectModal) {
+            projectModal.style.display = 'none';
+            mainContent.classList.remove('blur-background');
+        }
+    });
+    
