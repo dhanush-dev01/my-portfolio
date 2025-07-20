@@ -286,6 +286,36 @@ sr.reveal(`.footer, footer__container`, {
   distance: "30px",
 });
 
+sr.reveal(`.articles__cards`, {
+  delay: 100,
+  scale: 0.9,
+  origin: "bottom",
+  distance: "30px",
+});
+
+sr.reveal(`.article__card`, {
+  delay: 200,
+  scale: 0.9,
+  origin: "bottom",
+  distance: "30px",
+  interval: 100,
+});
+
+sr.reveal(`.projects__cards`, {
+  delay: 100,
+  scale: 0.9,
+  origin: "bottom",
+  distance: "30px",
+});
+
+sr.reveal(`.project__card`, {
+  delay: 200,
+  scale: 0.9,
+  origin: "bottom",
+  distance: "30px",
+  interval: 150,
+});
+
     // Modal functionality
 
 
@@ -342,4 +372,3 @@ sr.reveal(`.footer, footer__container`, {
             mainContent.classList.remove('blur-background');
         }
     });
-    
